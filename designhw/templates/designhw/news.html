@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{% static 'designhw/css/style.css'%}" rel="stylesheet" />
+    <title>Title</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            {% for nws in news %}
+            <div class="col-6 p-2">
+                <div class="card">
+                  <div class="card-header">
+                      News
+                  </div>
+                  <div class="card-body">
+                      <h5 class="card-title">{{nws.title}}</h5>
+                      <p class="card-text">{{nws.content}}</p>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
